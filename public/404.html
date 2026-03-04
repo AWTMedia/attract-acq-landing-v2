@@ -4,26 +4,26 @@
   <meta charset="utf-8">
   <title>Redirecting...</title>
   <script>
-    // Clean, safe SPA redirect for BrowserRouter on GitHub Pages
+    // Safe SPA redirect for GitHub Pages + BrowserRouter
+    // Matches the logic in index.html to avoid loops
     (function() {
       const originalPath = window.location.pathname + window.location.search + window.location.hash;
-      
-      // Prevent loop: don't redirect if already at index.html + path
+
+      // Already redirected? Clean up and stop
       if (originalPath.startsWith('/index.html')) {
-        // Already redirected once – clean up and stop
         const cleanPath = originalPath.replace(/^\/index\.html/, '') || '/';
         window.location.replace(cleanPath);
         return;
       }
-      
+
       // Normal case: redirect to index.html + original path
       window.location.replace('/index.html' + originalPath);
     })();
   </script>
-  <!-- Fallback if JS disabled -->
-  <meta http-equiv="refresh" content="0; url=/">
+  <!-- Fallback if JS is disabled -->
+  <meta http-equiv="refresh" content="0; url=/" />
 </head>
 <body>
-  <p>Redirecting... If nothing happens, <a href="/">go home</a>.</p>
+  <p>Redirecting... If nothing happens, <a href="/">go to the home page</a>.</p>
 </body>
 </html>
