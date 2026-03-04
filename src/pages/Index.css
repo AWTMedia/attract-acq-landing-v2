@@ -678,11 +678,13 @@ footer {
   .hero::after { display: none; }
   .hero-left { padding-right: 0; }
   .hero-right { padding-left: 0; margin-top: 48px; }
+  .two-col-grid { grid-template-columns: 1fr; gap: 48px; }
   .problem-grid, .results-grid, .tiers-row { grid-template-columns: 1fr; }
   .container { padding: 0 24px; }
   .sprint-banner { grid-template-columns: 1fr; }
   .compare-grid { grid-template-columns: 1fr; }
   .sectors-grid { grid-template-columns: 1fr 1fr; }
+  .cta-steps-grid { grid-template-columns: 1fr; }
 }
 
 /* RESPONSIVE — PHONE */
