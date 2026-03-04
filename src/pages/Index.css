@@ -758,8 +758,10 @@ footer {
   .sprint-fee { font-size: 40px; }
   .sprint-right { text-align: center; }
 
-  /* HOW IT WORKS — stack to single column on mobile */
-  #how .container > div { grid-template-columns: 1fr !important; gap: 40px !important; }
+  /* TWO-COL GRID → single column */
+  .two-col-grid { grid-template-columns: 1fr; gap: 40px; }
+
+  /* HOW IT WORKS */
   .touch-body { padding: 0 0 36px 20px; }
   .touch-body h3 { font-size: 20px; }
   .touch-body p { font-size: 13px; }
@@ -775,12 +777,7 @@ footer {
   /* Hide the quote block on mobile for cleaner layout */
   #sectors .container > .reveal.reveal-delay-3 { display: none; }
 
-  /* COMPARISON — stack to single column */
-  #faq ~ .section .container > div,
-  .section:not(.alt):not(#faq) .container > div[style*="grid-template-columns"] {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-  }
+  /* COMPARISON */
   .compare-grid { grid-template-columns: 1fr; }
   .c-row { padding: 8px 16px; font-size: 12px; }
   .compare-head { padding: 14px 16px; }
@@ -793,8 +790,7 @@ footer {
   .t-card { padding: 16px 18px; }
   .t-text { font-size: 13px; }
 
-  /* FAQ — stack to single column */
-  #faq .container > div { grid-template-columns: 1fr !important; gap: 32px !important; }
+  /* FAQ */
   .faq-q { padding: 14px 16px; font-size: 14px; }
   .faq-a { font-size: 13px; padding: 0 16px; }
   .faq-item.open .faq-a { padding: 0 16px 14px; }
@@ -806,9 +802,8 @@ footer {
   .btn-large { padding: 14px 24px; font-size: 10px; width: 100%; justify-content: center; }
   .btn-large-ghost { padding: 14px 24px; font-size: 10px; width: 100%; text-align: center; display: inline-flex; justify-content: center; }
   /* CTA 3-step grid → single column */
-  .cta-section .reveal[style*="grid-template-columns"] {
-    grid-template-columns: 1fr !important;
-  }
+  .cta-steps-grid { grid-template-columns: 1fr; margin-top: 40px; }
+  .cta-steps-grid > div { padding: 20px 18px; }
 
   /* FOOTER */
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
