@@ -617,17 +617,17 @@ const Index = () => {
             <p className="cta-note">15 minutes · Free · No obligation · Clear next step</p>
           </div>
           <div className="cta-steps-grid reveal reveal-delay-2">
-            <div style={{ background: "var(--bg2)", padding: 28, textAlign: "left" }}>
+            <div>
               <span className="label" style={{ marginBottom: 10, display: "block" }}>Step 01</span>
               <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 18, fontWeight: 700, marginBottom: 6 }}>Book a Call</div>
               <p style={{ fontSize: 13, color: "var(--grey)", lineHeight: 1.5 }}>15 minutes. Map the engine for your specific business — profile funnel, content structure, DM-to-booking flow.</p>
             </div>
-            <div style={{ background: "var(--bg2)", padding: 28, textAlign: "left" }}>
+            <div>
               <span className="label" style={{ marginBottom: 10, display: "block" }}>Step 02</span>
               <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 18, fontWeight: 700, marginBottom: 6 }}>Run the Sprint</div>
               <p style={{ fontSize: 13, color: "var(--grey)", lineHeight: 1.5 }}>14 days. Ad spend only. R0 management fee. See real local enquiries generated before you commit to anything.</p>
             </div>
-            <div style={{ background: "var(--bg2)", padding: 28, textAlign: "left" }}>
+            <div>
               <span className="label" style={{ marginBottom: 10, display: "block" }}>Step 03</span>
               <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 18, fontWeight: 700, marginBottom: 6 }}>Install the Engine</div>
               <p style={{ fontSize: 13, color: "var(--grey)", lineHeight: 1.5 }}>Full brand infrastructure. Predictable clients every month. Live pipeline tracking. Your acquisition problem — solved.</p>
