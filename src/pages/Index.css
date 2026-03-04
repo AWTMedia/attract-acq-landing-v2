@@ -652,17 +652,163 @@ footer {
 .footer-links a { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--grey2); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--teal); }
 
-/* RESPONSIVE */
+/* TWO-COL GRID UTILITY */
+.two-col-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+
+/* CTA STEPS GRID */
+.cta-steps-grid {
+  margin-top: 64px; display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: var(--border2);
+  border-radius: 8px; overflow: hidden;
+  max-width: 800px; margin-left: auto; margin-right: auto;
+}
+.cta-steps-grid > div {
+  background: var(--bg2); padding: 28px; text-align: left;
+}
+
+/* RESPONSIVE — TABLET */
 @media (max-width: 900px) {
   nav { padding: 0 24px; }
+  .nav-links { display: none; }
   .hero { grid-template-columns: 1fr; padding: 60px 24px; }
   .hero::after { display: none; }
   .hero-left { padding-right: 0; }
   .hero-right { padding-left: 0; margin-top: 48px; }
+  .two-col-grid { grid-template-columns: 1fr; gap: 48px; }
   .problem-grid, .results-grid, .tiers-row { grid-template-columns: 1fr; }
   .container { padding: 0 24px; }
   .sprint-banner { grid-template-columns: 1fr; }
   .compare-grid { grid-template-columns: 1fr; }
   .sectors-grid { grid-template-columns: 1fr 1fr; }
+  .cta-steps-grid { grid-template-columns: 1fr; }
+}
+
+/* RESPONSIVE — PHONE */
+@media (max-width: 600px) {
+  /* Hide custom cursor on touch devices */
+  .cursor, .cursor-ring { display: none !important; }
+  body { cursor: auto; font-size: 15px; }
+  .faq-q, .nav-cta, .btn-hero, .btn-ghost, .btn-large, .btn-large-ghost { cursor: auto; }
+
+  /* NAV */
+  nav { padding: 0 16px; height: 56px; }
+  .nav-brand { font-size: 10px; }
+  .nav-brand span { display: none; }
+  .nav-cta { padding: 7px 14px; font-size: 9px; }
   .nav-links { display: none; }
+
+  /* TICKER */
+  .ticker { margin-top: 56px; font-size: 9px; padding: 6px 0; }
+  .ticker-item { padding: 0 24px; }
+
+  /* HERO */
+  .hero { padding: 40px 16px 48px; min-height: auto; }
+  .hero h1 { font-size: 36px; margin-bottom: 18px; }
+  .hero-eyebrow { margin-bottom: 20px; }
+  .eyebrow-text { font-size: 9px; }
+  .hero-sub { font-size: 15px; margin-bottom: 28px; }
+  .hero-ctas { margin-bottom: 32px; gap: 10px; }
+  .btn-hero { padding: 12px 20px; font-size: 10px; width: 100%; justify-content: center; }
+  .btn-ghost { padding: 12px 20px; font-size: 10px; width: 100%; text-align: center; justify-content: center; display: flex; }
+  .hero-trust { flex-wrap: wrap; gap: 10px; }
+  .trust-sep { display: none; }
+  .trust-item { font-size: 9px; }
+
+  /* PIPELINE CARD */
+  .hero-right { padding-left: 0; margin-top: 36px; }
+  .pipeline-header { padding: 10px 14px; }
+  .pipeline-title { font-size: 8px; letter-spacing: 0.1em; }
+  .p-row { padding: 8px 14px; gap: 10px; }
+  .p-label { font-size: 11px; }
+  .p-bar-wrap { width: 50px; }
+  .p-num { font-size: 11px; min-width: 40px; }
+  .pipeline-footer { padding: 12px 14px; }
+  .pf-val { font-size: 18px; }
+  .pipeline-note { font-size: 8px; padding: 8px 14px; }
+
+  /* SECTIONS */
+  .section { padding: 64px 0; }
+  .container { padding: 0 16px; }
+  .sec-h2 { font-size: 26px; }
+  .sec-p { font-size: 14px; }
+
+  /* PROBLEM */
+  .problem-grid { grid-template-columns: 1fr; gap: 40px; }
+  .voice-item { padding: 10px 14px; font-size: 13px; }
+  .voice-item strong { font-size: 13px; }
+
+  /* SYSTEM / TIERS */
+  .system-intro { margin-bottom: 36px; }
+  .formula-line { gap: 10px; }
+  .f-item { font-size: 16px; }
+  .f-op { font-size: 13px; }
+  .tiers-row { grid-template-columns: 1fr; }
+  .tier-card { padding: 28px 20px; }
+  .tier-card h3 { font-size: 22px; }
+  .tier-card > p { font-size: 13px; }
+  .tier-card::before { font-size: 60px; right: 16px; top: 14px; }
+  .t-price { font-size: 24px; }
+
+  /* SPRINT BANNER */
+  .sprint-banner { grid-template-columns: 1fr; padding: 24px 20px; gap: 24px; }
+  .sprint-left h3 { font-size: 22px; }
+  .sprint-left p { font-size: 13px; }
+  .sprint-fee { font-size: 40px; }
+  .sprint-right { text-align: center; }
+
+  /* TWO-COL GRID → single column */
+  .two-col-grid { grid-template-columns: 1fr; gap: 40px; }
+
+  /* HOW IT WORKS */
+  .touch-body { padding: 0 0 36px 20px; }
+  .touch-body h3 { font-size: 20px; }
+  .touch-body p { font-size: 13px; }
+  .touch-item { grid-template-columns: 56px 1fr; }
+  .touch-num-circle { width: 36px; height: 36px; font-size: 11px; }
+
+  /* SECTORS */
+  .sectors-grid { grid-template-columns: 1fr; }
+  .sector-tile { padding: 20px 18px; }
+  .sector-tile h4 { font-size: 16px; }
+  .sector-tile p { font-size: 12px; }
+  .sector-proof { font-size: 9px; }
+  /* Hide the quote block on mobile for cleaner layout */
+  #sectors .container > .reveal.reveal-delay-3 { display: none; }
+
+  /* COMPARISON */
+  .compare-grid { grid-template-columns: 1fr; }
+  .c-row { padding: 8px 16px; font-size: 12px; }
+  .compare-head { padding: 14px 16px; }
+
+  /* RESULTS */
+  .results-grid { grid-template-columns: 1fr; gap: 40px; }
+  .results-metrics { grid-template-columns: 1fr 1fr; }
+  .r-num { font-size: 28px; }
+  .r-metric { padding: 18px 14px; }
+  .t-card { padding: 16px 18px; }
+  .t-text { font-size: 13px; }
+
+  /* FAQ */
+  .faq-q { padding: 14px 16px; font-size: 14px; }
+  .faq-a { font-size: 13px; padding: 0 16px; }
+  .faq-item.open .faq-a { padding: 0 16px 14px; }
+
+  /* CTA */
+  .cta-section { padding: 72px 0; }
+  .cta-section h2 { font-size: 30px; }
+  .cta-section p { font-size: 14px; }
+  .btn-large { padding: 14px 24px; font-size: 10px; width: 100%; justify-content: center; }
+  .btn-large-ghost { padding: 14px 24px; font-size: 10px; width: 100%; text-align: center; display: inline-flex; justify-content: center; }
+  /* CTA 3-step grid → single column */
+  .cta-steps-grid { grid-template-columns: 1fr; margin-top: 40px; }
+  .cta-steps-grid > div { padding: 20px 18px; }
+
+  /* FOOTER */
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer-copy { font-size: 9px; }
+  .footer-links { gap: 16px; }
 }
