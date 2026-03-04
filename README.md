@@ -1,8 +1,5 @@
 # Attract Acquisition – Landing Page & Lead Capture
 
-![Hero Preview](https://via.placeholder.com/1200x600/070F0D/00E5C3?text=Attract+Acquisition+Hero)  
-*(Replace with a real screenshot of the /audit page once live)*
-
 **Attract Acquisition** builds **Attraction Engines** for physical, local businesses — turning Instagram (posts, Reels, Stories, DMs) into qualified leads, bookings, and paying clients.
 
 This repository contains the **frontend codebase** for https://attractacq.com — a high-conversion landing page offering a **free Missed Jobs Report** audit. Businesses submit details → get a personalized analysis of lost revenue opportunities in their local market → receive it via WhatsApp/email within 24 hours.
