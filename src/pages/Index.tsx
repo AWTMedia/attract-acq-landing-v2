@@ -339,7 +339,7 @@ const Index = () => {
       {/* HOW IT WORKS */}
       <section className="section" id="how">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
+          <div className="two-col-grid">
             <div className="reveal">
               <span className="label">The Three-Touch Process</span>
               <h2 className="sec-h2">We don't turn the ads on until the brand is ready to receive them.</h2>
@@ -445,7 +445,7 @@ const Index = () => {
       {/* COMPARISON */}
       <section className="section">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
+          <div className="two-col-grid">
             <div className="reveal">
               <span className="label">The Difference</span>
               <h2 className="sec-h2">Not another agency.<br /><em style={{ fontStyle: "italic", color: "var(--teal)" }}>An infrastructure company.</em></h2>
@@ -559,7 +559,7 @@ const Index = () => {
       {/* FAQ */}
       <section className="section" id="faq">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
+          <div className="two-col-grid">
             <div className="reveal">
               <span className="label">Questions</span>
               <h2 className="sec-h2">Everything you need to know before you book.</h2>
@@ -616,7 +616,7 @@ const Index = () => {
             </div>
             <p className="cta-note">15 minutes · Free · No obligation · Clear next step</p>
           </div>
-          <div className="reveal reveal-delay-2" style={{ marginTop: 64, display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 2, background: "var(--border2)", borderRadius: 8, overflow: "hidden", maxWidth: 800, marginLeft: "auto", marginRight: "auto" }}>
+          <div className="cta-steps-grid reveal reveal-delay-2">
             <div style={{ background: "var(--bg2)", padding: 28, textAlign: "left" }}>
               <span className="label" style={{ marginBottom: 10, display: "block" }}>Step 01</span>
               <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 18, fontWeight: 700, marginBottom: 6 }}>Book a Call</div>
