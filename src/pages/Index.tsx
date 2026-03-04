@@ -131,7 +131,7 @@ const Index = () => {
           <li><a href="#results">Results</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
-        <a href="#cta" className="nav-cta">Book a Call →</a>
+        <a href="https://calendly.com/attractacquisition/attract-acquisition-1-1-call?month=2026-03" target="_blank" rel="noopener noreferrer" className="nav-cta">Book a Call →</a>
       </nav>
 
       {/* TICKER */}
@@ -170,7 +170,7 @@ const Index = () => {
               We install the brand infrastructure that turns your service business from invisible to the most trusted name in your local market — consistently, measurably, and without you becoming a content creator.
             </p>
             <div className="hero-ctas">
-              <a href="#cta" className="btn-hero">Book a Free Call →</a>
+              <a href="https://calendly.com/attractacquisition/attract-acquisition-1-1-call?month=2026-03" target="_blank" rel="noopener noreferrer" className="btn-hero">Book a Free Call →</a>
               <a href="#how" className="btn-ghost">See How It Works</a>
             </div>
             <div className="hero-trust">
@@ -330,7 +330,7 @@ const Index = () => {
             <div className="sprint-right">
               <span className="sprint-fee">R0</span>
               <span className="sprint-fee-label">Management fee<br />during trial</span>
-              <a href="#cta" className="btn-hero" style={{ marginTop: 20, justifyContent: "center" }}>Start the Sprint →</a>
+              <a href="https://wa.me/31628960405?text=I'm%20ready%20to%20start%20the%20Proof%20Sprint" target="_blank" rel="noopener noreferrer" className="btn-hero" style={{ marginTop: 20, justifyContent: "center" }}>Start the Sprint →</a>
             </div>
           </div>
         </div>
@@ -567,7 +567,7 @@ const Index = () => {
               <div style={{ marginTop: 32, padding: "24px 28px", background: "var(--teal-faint)", border: "1px solid var(--border)", borderRadius: 6 }}>
                 <span className="label" style={{ marginBottom: 10, display: "block" }}>Still have questions?</span>
                 <p style={{ fontSize: 14, color: "rgba(238,242,241,0.7)", marginBottom: 16 }}>Book a 15-minute call. No pitch, no pressure — just a clear answer to whether the system is right for your business.</p>
-                <a href="#cta" className="btn-hero" style={{ display: "inline-flex" }}>Book 15-Min Call →</a>
+                <a href="https://calendly.com/attractacquisition/attract-acquisition-1-1-call?month=2026-03" target="_blank" rel="noopener noreferrer" className="btn-hero" style={{ display: "inline-flex" }}>Book 15-Min Call →</a>
               </div>
             </div>
             <div className="reveal reveal-delay-2">
@@ -611,8 +611,8 @@ const Index = () => {
             <h2>Your work deserves to be<br /><em>the most trusted name</em><br />in your market.</h2>
             <p>Book a 15-minute call. We'll map your Acquisition Engine — profile funnel, content structure, and DM-to-booking flow — specific to your business. No pitch. No pressure. Just clarity.</p>
             <div className="cta-row">
-              <a href="https://attractacq.com" className="btn-large">Book a 15-Min Call →</a>
-              <a href="https://attractacq.com" className="btn-large-ghost">Get a Free Demand Audit</a>
+              <a href="https://calendly.com/attractacquisition/attract-acquisition-1-1-call?month=2026-03" target="_blank" rel="noopener noreferrer" className="btn-large">Book a 15-Min Call →</a>
+              <a href="/audit" className="btn-large-ghost">Get a Free Demand Audit</a>
             </div>
             <p className="cta-note">15 minutes · Free · No obligation · Clear next step</p>
           </div>
