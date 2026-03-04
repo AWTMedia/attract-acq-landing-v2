@@ -84,26 +84,7 @@
   </head>
 
   <body>
-    <!-- Fixed SPA redirect script – prevents loops -->
-    <script type="text/javascript">
-      (function(l) {
-        // Skip if at root or already cleaned
-        if (l.pathname === '/' || l.pathname === '/index.html') return;
-
-        // If we have /index.html prefix, strip it and redirect once
-        if (l.pathname.startsWith('/index.html')) {
-          var cleanPath = l.pathname.slice(11) || '/'; // remove /index.html
-          cleanPath += l.search + l.hash;
-          l.replace(cleanPath);
-          return;
-        }
-
-        // Normal redirect: add /index.html prefix
-        var target = '/index.html' + l.pathname + l.search + l.hash;
-        l.replace(target);
-      })(window.location);
-    </script>
-
+    <!-- No redirect script here – handled only by 404.html to avoid loops -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
