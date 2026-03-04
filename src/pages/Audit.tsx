@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Audit() {
@@ -486,6 +486,21 @@ export default function Audit() {
           to   { opacity: 1; transform: translateY(0); }
         }
 
+        /* CURSOR */
+        .cursor {
+          width: 8px; height: 8px; background: var(--teal); border-radius: 50%;
+          position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
+          mix-blend-mode: difference;
+        }
+        .cursor-ring {
+          width: 32px; height: 32px; border: 1.5px solid rgba(0,229,195,0.35);
+          border-radius: 50%; position: fixed; top: 0; left: 0;
+          pointer-events: none; z-index: 9998; transition: width 0.25s, height 0.25s, border-color 0.25s;
+        }
+        .cursor-ring.hovered {
+          width: 48px; height: 48px; border-color: var(--teal);
+        }
+
         /* MOBILE */
         @media (max-width: 900px) {
           nav { padding: 0 20px; }
@@ -495,14 +510,17 @@ export default function Audit() {
             padding: 60px 20px 60px;
           }
           .form-card { padding: 28px 22px; }
+          .cursor, .cursor-ring { display: none !important; }
         }
       `}</style>
 
+      <div className="cursor" ref={cursorRef} />
+      <div className="cursor-ring" ref={ringRef} />
       <div className="glow-top" />
       <div className="glow-bottom" />
 
       <nav>
-        <a href="/" className="nav-logo">
+        <a href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }} className="nav-logo" style={{ cursor: "none" }}>
           <div className="nav-badge">AA</div>
           <span className="nav-name">Attract Acquisition</span>
         </a>
