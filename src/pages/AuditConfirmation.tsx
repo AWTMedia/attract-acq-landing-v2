@@ -1,16 +1,47 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function AuditConfirmation() {
   const [copied, setCopied] = useState(false);
+  const navigate = useNavigate();
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
 
-  // Optional: could add a fake "progress" or timer if you want
   useEffect(() => {
-    // Example: auto-reset "copied" state after 2.5 seconds
     if (copied) {
       const timer = setTimeout(() => setCopied(false), 2500);
       return () => clearTimeout(timer);
     }
   }, [copied]);
+
+  useEffect(() => {
+    const cursor = cursorRef.current;
+    const ring = ringRef.current;
+    if (!cursor || !ring) return;
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    const onMove = (e: MouseEvent) => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
+    };
+    document.addEventListener("mousemove", onMove);
+    let raf: number;
+    const animate = () => {
+      rx += (mx - rx - 16) * 0.12;
+      ry += (my - ry - 16) * 0.12;
+      ring.style.transform = `translate(${rx}px, ${ry}px)`;
+      raf = requestAnimationFrame(animate);
+    };
+    raf = requestAnimationFrame(animate);
+    const hovers = document.querySelectorAll("a, button");
+    const enter = () => ring.classList.add("hovered");
+    const leave = () => ring.classList.remove("hovered");
+    hovers.forEach(el => { el.addEventListener("mouseenter", enter); el.addEventListener("mouseleave", leave); });
+    return () => {
+      document.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(raf);
+      hovers.forEach(el => { el.removeEventListener("mouseenter", enter); el.removeEventListener("mouseleave", leave); });
+    };
+  }, []);
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText("https://attractacquisition.com/referral?ref=example123");
@@ -538,18 +569,36 @@ export default function AuditConfirmation() {
           to   { opacity: 1; transform: translateY(0); }
         }
 
+        /* CURSOR */
+        .cursor {
+          width: 8px; height: 8px; background: var(--teal); border-radius: 50%;
+          position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
+          mix-blend-mode: difference;
+        }
+        .cursor-ring {
+          width: 32px; height: 32px; border: 1.5px solid rgba(0,229,195,0.35);
+          border-radius: 50%; position: fixed; top: 0; left: 0;
+          pointer-events: none; z-index: 9998; transition: width 0.25s, height 0.25s, border-color 0.25s;
+        }
+        .cursor-ring.hovered {
+          width: 48px; height: 48px; border-color: var(--teal);
+        }
+
         @media (max-width: 700px) {
           nav { padding: 0 20px; }
           .page { padding: 120px 20px 60px; }
           .timeline-card, .share-card { padding: 24px 20px; }
           .bottom-strip { padding: 16px 20px; flex-direction: column; align-items: flex-start; }
+          .cursor, .cursor-ring { display: none !important; }
         }
       `}</style>
 
+      <div className="cursor" ref={cursorRef} />
+      <div className="cursor-ring" ref={ringRef} />
       <div className="glow-center" />
 
       <nav>
-        <a href="/" className="nav-logo">
+        <a href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }} className="nav-logo" style={{ cursor: "none" }}>
           <div className="nav-badge">AA</div>
           <span className="nav-name">Attract Acquisition</span>
         </a>
